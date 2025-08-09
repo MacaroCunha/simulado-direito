@@ -1,0 +1,23 @@
+{
+  "name": "simulado-direito",
+  "version": "1.0.0",
+  "description": "Um simulado interativo de questões de Direito, focado em temas para o Tribunal de Justiça de São Paulo (TJSP). Este projeto foi criado para estudantes e concurseiros que desejam testar seus conhecimentos e praticar para o exame.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MacaroCunha/simulado-direito.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MacaroCunha/simulado-direito/issues"
+  },
+  "homepage": "https://github.com/MacaroCunha/simulado-direito#readme",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
