@@ -1,0 +1,591 @@
+/* ========================================================= */ 
+
+/* VARIÁVEIS GLOBAIS - Paleta de Cores Moderna */ 
+
+/* ========================================================= */ 
+
+:root { 
+
+    --primary-color: #007bff; /* Azul vibrante */ 
+
+    --primary-dark: #0056b3; /* Azul escuro para hover */ 
+
+    --text-color: #334e68; /* Azul escuro para texto principal */ 
+
+    --secondary-text-color: #1a365d; /* Azul mais escuro para títulos */ 
+
+    --background-light: #f0f4f8; /* Fundo suave */ 
+
+    --container-background: #ffffff; /* Fundo dos cards */ 
+
+    --card-background: #f7f9fc; /* Fundo dos cards de questão */ 
+
+    --border-color: #d9e2ec; /* Cor da borda discreta */ 
+
+    --correct-bg: #d4edda; /* Fundo verde */ 
+
+    --correct-border: #c3e6cb; /* Borda verde */ 
+
+    --correct-text: #155724; /* Texto verde */ 
+
+    --incorrect-bg: #f8d7da; /* Fundo vermelho */ 
+
+    --incorrect-border: #f5c6cb; /* Borda vermelha */ 
+
+    --incorrect-text: #721c24; /* Texto vermelho */ 
+
+    --shadow: 0 6px 12px rgba(0, 0, 0, 0.08); /* Sombra mais suave */ 
+
+} 
+
+  
+
+/* ========================================================= */ 
+
+/* ESTILOS GERAIS */ 
+
+/* ========================================================= */ 
+
+body { 
+
+    background-color: var(--background-light); 
+
+    color: var(--text-color); 
+
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+
+    margin: 0; 
+
+    padding: 20px; 
+
+    display: flex; 
+
+    flex-direction: column; 
+
+    align-items: center; 
+
+    /* Animação de entrada suave */ 
+
+    animation: fadeIn 0.5s ease-in-out; 
+
+} 
+
+  
+
+@keyframes fadeIn { 
+
+    from { 
+
+        opacity: 0; 
+
+        transform: translateY(-20px); 
+
+    } 
+
+    to { 
+
+        opacity: 1; 
+
+        transform: translateY(0); 
+
+    } 
+
+} 
+
+  
+
+h1 { 
+
+    color: var(--primary-color); 
+
+    text-align: center; 
+
+    margin-bottom: 30px; 
+
+    font-size: 2.5em; 
+
+    font-weight: 600; 
+
+} 
+
+  
+
+.main-container { 
+
+    max-width: 900px; 
+
+    width: 100%; 
+
+    padding: 30px; 
+
+    background-color: var(--container-background); 
+
+    border-radius: 12px; 
+
+    box-shadow: var(--shadow); 
+
+    display: flex; 
+
+    flex-direction: column; 
+
+    gap: 30px; /* Adicionado para espaço entre as seções */ 
+
+} 
+
+  
+
+/* ========================================================= */ 
+
+/* ESTILOS DE COMPONENTES */ 
+
+/* ========================================================= */ 
+
+h2 { 
+
+    color: var(--secondary-text-color); 
+
+    border-bottom: 1px solid var(--border-color); 
+
+    padding-bottom: 15px; 
+
+    margin-top: 0; /* Removido margin-top para ser controlado pelo gap do main-container */ 
+
+    font-size: 1.4em; 
+
+    line-height: 1.5; 
+
+} 
+
+  
+
+.question-group { 
+
+    display: flex; 
+
+    flex-direction: column; 
+
+    gap: 20px; 
+
+} 
+
+  
+
+.question { 
+
+    padding: 20px; 
+
+    background-color: var(--card-background); 
+
+    border-radius: 8px; 
+
+    border-left: 5px solid var(--primary-color); 
+
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+
+} 
+
+  
+
+.question:hover { 
+
+    transform: translateY(-5px); 
+
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); 
+
+} 
+
+  
+
+.question p { 
+
+    margin-bottom: 15px; 
+
+    font-size: 1.1em; 
+
+    line-height: 1.6; 
+
+} 
+
+  
+
+.option { 
+
+    margin: 10px 0; /* Ajustado para melhor espaçamento */ 
+
+    padding: 12px; 
+
+    display: flex; 
+
+    align-items: center; 
+
+    cursor: pointer; 
+
+    border-radius: 6px; 
+
+    transition: background-color 0.3s ease, transform 0.2s ease, border-color 0.3s ease; 
+
+    border: 1px solid var(--border-color); 
+
+} 
+
+  
+
+.option:hover { 
+
+    background-color: #e6f2ff; 
+
+    transform: translateX(5px); 
+
+    border-color: var(--primary-color); 
+
+} 
+
+  
+
+.option input[type="radio"] { 
+
+    margin-right: 15px; 
+
+    cursor: pointer; 
+
+    /* Esconde o radio padrão e estiliza o customizado */ 
+
+    appearance: none; 
+
+    width: 20px; 
+
+    height: 20px; 
+
+    border: 2px solid var(--border-color); 
+
+    border-radius: 50%; 
+
+    position: relative; 
+
+    outline: none; 
+
+    transition: border-color 0.3s ease; 
+
+} 
+
+  
+
+.option input[type="radio"]:checked { 
+
+    border-color: var(--primary-color); 
+
+} 
+
+  
+
+.option input[type="radio"]:checked::after { 
+
+    content: ''; 
+
+    width: 10px; 
+
+    height: 10px; 
+
+    background-color: var(--primary-color); 
+
+    position: absolute; 
+
+    top: 50%; 
+
+    left: 50%; 
+
+    transform: translate(-50%, -50%); 
+
+    border-radius: 50%; 
+
+} 
+
+  
+
+/* Feedback visual nas opções */ 
+
+.option.correct-option { 
+
+    background-color: var(--correct-bg); 
+
+    border-color: var(--correct-border); 
+
+} 
+
+  
+
+.option.incorrect-option { 
+
+    background-color: var(--incorrect-bg); 
+
+    border-color: var(--incorrect-border); 
+
+} 
+
+  
+
+.option.correct-option, 
+
+.option.incorrect-option { 
+
+    color: #000; /* Define uma cor de texto mais escura para o contraste */ 
+
+} 
+
+  
+
+.option.correct-option:hover, 
+
+.option.incorrect-option:hover { 
+
+    transform: none; /* Desativa a transição de hover quando a resposta é selecionada */ 
+
+} 
+
+  
+
+/* Estilo para a opção correta após a resposta incorreta */ 
+
+.correct-option-highlight { 
+
+    background-color: var(--correct-bg); 
+
+    border-color: var(--correct-border); 
+
+    transition: all 0.3s ease; 
+
+} 
+
+  
+
+/* ========================================================= */ 
+
+/* ESTILOS DOS RESULTADOS */ 
+
+/* ========================================================= */ 
+
+.result { 
+
+    margin-top: 15px; 
+
+    padding: 12px; 
+
+    border-radius: 6px; 
+
+    font-weight: bold; 
+
+    font-size: 1em; 
+
+    display: none; /* Escondido por padrão, será exibido pelo JS */ 
+
+} 
+
+  
+
+.correct { 
+
+    color: var(--correct-text); 
+
+    background-color: var(--correct-bg); 
+
+    border: 1px solid var(--correct-border); 
+
+} 
+
+  
+
+.incorrect { 
+
+    color: var(--incorrect-text); 
+
+    background-color: var(--incorrect-bg); 
+
+    border: 1px solid var(--incorrect-border); 
+
+} 
+
+  
+
+#result-final { 
+
+    margin-top: 40px; 
+
+    font-size: 2em; 
+
+    text-align: center; 
+
+    font-weight: bold; 
+
+    color: var(--secondary-text-color); 
+
+    padding: 20px; 
+
+    border-radius: 8px; 
+
+    border: 2px dashed var(--primary-color); 
+
+} 
+
+  
+
+/* ========================================================= */ 
+
+/* ESTILOS DOS BOTÕES */ 
+
+/* ========================================================= */ 
+
+.button-container { 
+
+    display: flex; 
+
+    justify-content: center; 
+
+    margin-top: 30px; 
+
+    gap: 15px; 
+
+} 
+
+  
+
+button { 
+
+    padding: 15px 30px; 
+
+    font-size: 1.1em; 
+
+    font-weight: bold; 
+
+    color: #fff; 
+
+    background-color: var(--primary-color); 
+
+    border: none; 
+
+    border-radius: 8px; 
+
+    cursor: pointer; 
+
+    transition: background-color 0.3s ease, transform 0.2s ease; 
+
+    flex-grow: 1; 
+
+    max-width: 300px; 
+
+} 
+
+  
+
+button:hover { 
+
+    background-color: var(--primary-dark); 
+
+} 
+
+  
+
+button:active { 
+
+    transform: scale(0.98); 
+
+} 
+
+  
+
+#reset-button { 
+
+    background-color: #6c757d; 
+
+} 
+
+  
+
+#reset-button:hover { 
+
+    background-color: #5a6268; 
+
+} 
+
+  
+
+/* ========================================================= */ 
+
+/* ESTILOS RESPONSIVOS */ 
+
+/* ========================================================= */ 
+
+@media (max-width: 768px) { 
+
+    body { 
+
+        padding: 10px; 
+
+    } 
+
+  
+
+    h1 { 
+
+        font-size: 2em; 
+
+    } 
+
+  
+
+    .main-container { 
+
+        padding: 20px; 
+
+    } 
+
+  
+
+    h2 { 
+
+        font-size: 1.2em; 
+
+    } 
+
+     
+
+    .option { 
+
+        flex-direction: column; 
+
+        align-items: flex-start; 
+
+        text-align: left; 
+
+        padding: 15px; 
+
+    } 
+
+  
+
+    .option input[type="radio"] { 
+
+        margin-bottom: 10px; 
+
+    } 
+
+  
+
+    .button-container { 
+
+        flex-direction: column; 
+
+        align-items: center; 
+
+    } 
+
+  
+
+    button { 
+
+        width: 100%; 
+
+        max-width: none; 
+
+    } 
+
+} 

@@ -1,0 +1,233 @@
+/* ========================================================= */ 
+
+/* VARIÁVEIS GLOBAIS - Paleta de Cores Moderna */ 
+
+/* ========================================================= */ 
+
+:root { 
+
+    --primary-color: #007bff; /* Azul vibrante */ 
+
+    --primary-dark: #0056b3; /* Azul escuro para hover */ 
+
+    --text-color: #334e68; /* Azul escuro para texto principal */ 
+
+    --secondary-text-color: #1a365d; /* Azul mais escuro para títulos */ 
+
+    --background-light: #f0f4f8; /* Fundo suave */ 
+
+    --container-background: #ffffff; /* Fundo dos cards */ 
+
+    --border-color: #d9e2ec; /* Cor da borda discreta */ 
+
+    --shadow: 0 6px 12px rgba(0, 0, 0, 0.08); /* Sombra mais suave */ 
+
+} 
+
+  
+
+/* ========================================================= */ 
+
+/* ESTILOS GERAIS DA PÁGINA PRINCIPAL */ 
+
+/* ========================================================= */ 
+
+body { 
+
+    background-color: var(--background-light); 
+
+    color: var(--text-color); 
+
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+
+    margin: 0; 
+
+    padding: 20px; 
+
+    display: flex; 
+
+    flex-direction: column; 
+
+    align-items: center; 
+
+    justify-content: center; 
+
+    min-height: 100vh; 
+
+    animation: fadeIn 0.5s ease-in-out; 
+
+} 
+
+  
+
+@keyframes fadeIn { 
+
+    from { 
+
+        opacity: 0; 
+
+        transform: translateY(-20px); 
+
+    } 
+
+    to { 
+
+        opacity: 1; 
+
+        transform: translateY(0); 
+
+    } 
+
+} 
+
+  
+
+.main-container { 
+
+    max-width: 600px; 
+
+    width: 100%; 
+
+    padding: 30px; 
+
+    background-color: var(--container-background); 
+
+    border-radius: 12px; 
+
+    box-shadow: var(--shadow); 
+
+    text-align: center; 
+
+} 
+
+  
+
+header { 
+
+    margin-bottom: 30px; 
+
+} 
+
+  
+
+header h1 { 
+
+    color: var(--primary-color); 
+
+    font-size: 2.5em; 
+
+    font-weight: 600; 
+
+    margin: 0 0 10px 0; 
+
+} 
+
+  
+
+header p { 
+
+    color: var(--secondary-text-color); 
+
+    font-size: 1.2em; 
+
+} 
+
+  
+
+.lista-temas { 
+
+    list-style-type: none; 
+
+    padding: 0; 
+
+    margin: 0; 
+
+    display: flex; 
+
+    flex-direction: column; 
+
+    gap: 15px; 
+
+} 
+
+  
+
+.lista-temas li { 
+
+    width: 100%; 
+
+} 
+
+  
+
+.lista-temas a { 
+
+    display: block; 
+
+    padding: 15px 20px; 
+
+    font-size: 1.1em; 
+
+    font-weight: 600; 
+
+    color: #fff; 
+
+    background-color: var(--primary-color); 
+
+    text-decoration: none; 
+
+    border-radius: 8px; 
+
+    transition: background-color 0.3s ease, transform 0.2s ease; 
+
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+
+} 
+
+  
+
+.lista-temas a:hover { 
+
+    background-color: var(--primary-dark); 
+
+    transform: translateY(-3px); 
+
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); 
+
+} 
+
+  
+
+.lista-temas a:active { 
+
+    transform: translateY(0); 
+
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+
+} 
+
+  
+
+/* ========================================================= */ 
+
+/* ESTILOS RESPONSIVOS */ 
+
+/* ========================================================= */ 
+
+@media (max-width: 768px) { 
+
+    .main-container { 
+
+        padding: 20px; 
+
+        width: 90%; 
+
+    } 
+
+    h1 { 
+
+        font-size: 2em; 
+
+    } 
+
+} 
